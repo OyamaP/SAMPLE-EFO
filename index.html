@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFO SAMPLE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="inner common-inner">
+			<h1 class="logo">EFO SAMPLE</h1>
+			<div class="info">
+				<span>TEL 00-0000-0000</span>
+				<span>受付時間 平日 9:00〜17:00</span>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+		<section class="section-form">
+			<div class="inner common-inner">
+				<h2>Contact Form</h2>
+				<form id="form" class="form" action="#" method="POST">
+					<dl>
+						<dt><span class="item-name">Name</span><span class="required">Required</span></dt>
+						<dd><div class="form-input"><input type="text" name="name" placeholder="Jhon Titor" data-required></div></dd>
+					</dl>
+					<dl>
+						<dt><span class="item-name">KanaName</span><span class="required">Required</span></dt>
+						<dd><div class="form-input"><input type="text" name="kananame" placeholder="Jhon Titor" data-required></div></dd>
+					</dl>
+					<dl>
+						<dt><span class="item-name">Email</span><span class="required">Required</span></dt>
+						<dd><div class="form-input"><input type="email" name="email" placeholder="example@webmail.co.jp" data-required></div></dd>
+					</dl>
+					<dl>
+						<dt><span class="item-name">Tel</span></dt>
+						<dd><div class="form-input"><input type="tel" name="tel" placeholder="09012345678"></div></dd>
+					</dl>
+					<dl>
+						<dt><span class="item-name">Address</span></dt>
+						<dd><div class="form-input"><input type="text" name="address"></div></dd>
+					</dl>
+					<dl>
+						<dt><span class="item-name">Gender</span><span class="required">Required</span></dt>
+						<dd>
+							<div class="form-input">
+								<input type="hidden" name="gender" data-required>
+								<label><input type="radio" name="gender" value="Man">Man</label>
+								<label><input type="radio" name="gender" value="Woman">Woman</label>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><span class="item-name">Blood type</span><span class="required">Required</span></dt>
+						<dd>
+							<div class="form-input">
+								<select name="bloodtype" data-required>
+									<option hidden>--Please Select--</option>
+									<option value="A">A</option>
+									<option value="B">B</option>
+									<option value="O">O</option>
+									<option value="AB">AB</option>
+								</select>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><span class="item-name">How did you find out about us?</span></dt>
+						<dd>
+							<div class="form-input">
+								<label><input type="checkbox" name="aboutus" value="Introduction of acquaintance">Introduction of acquaintance</label>
+								<label><input type="checkbox" name="aboutus" value="Internet advertising">Internet advertising</label>
+								<label><input type="checkbox" name="aboutus" value="SNS">SNS</label>
+								<label><input type="checkbox" name="aboutus" value="Business card exchange">Business card exchange</label>
+								<label><input type="checkbox" name="aboutus" value="Other">Other</label>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><span class="item-name">Comment</span></dt>
+						<dd><div class="form-input"><textarea name="comment"></textarea></div></dd>
+					</dl>
+					<div class="btnarea"><input type="button" value="Confirm"></div>
+				</form>
+				<div class="modal">
+					<div class="bg item"></div>
+					<div class="box item">
+						<div class="title">Confirm</div>
+						<div class="description">I will send it with this content</div>
+						<div class="content">
+							<form action="#" method="POST" name="modal">
+								<div class="inner"></div>
+								<div class="btnarea"><input type="submit" value="Submit"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer">
+		<div class="inner common-inner">
+			<p><small>&copy; EFO SAMPLE</small></p>
+		</div>
+	</footer>
+    <script src="script.js"></script>
+</body>
+</html>

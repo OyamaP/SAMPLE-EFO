@@ -1,0 +1,306 @@
+@charset "UTF-8";
+
+/*****************************
+/ reset
+/*****************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+* {
+	box-sizing: border-box;
+}
+
+/*****************************
+/ 補正
+/*****************************/
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: "メイリオ",Meiryo,sans-serif;
+	font-size: 1.6rem;
+}
+h1 {
+	font-size: 3.6rem;
+	font-weight: bold;
+}
+h2 {
+	font-size: 2.8rem;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+h3 {
+	font-size: 2.0rem;
+	font-weight: bold;
+}
+h4 {
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/*****************************
+/ common
+/*****************************/
+.common-inner {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 20px 50px;
+}
+
+.main {
+	margin-bottom: 100px;
+}
+
+/*****************************
+/ header
+/*****************************/
+.header {
+	margin-bottom: 50px;
+}
+.header .inner{
+	display: flex;
+	justify-content: space-between;
+}
+.header .logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header .info>* {
+	display: block;
+}
+
+/*****************************
+/ section-form
+/*****************************/
+.section-form dl {
+	display: flex;
+	padding: 25px 0;
+	border: 0 solid #bbb;
+	border-bottom-width: 1px;
+}
+.section-form dl:first-of-type {
+	border-top-width: 1px;
+}
+.section-form dl span,
+.form-input {
+	min-height: 35px;
+	min-width: 100px;
+}
+.form-input {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.section-form dt {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	padding-right: 100px;
+	min-width: 300px;
+	font-weight: bold;
+}
+.section-form dt>* {
+	padding: 5px 10px;
+}
+.section-form dd {
+	margin-left: 30px;
+	width: 100%;
+}
+.required {
+	position: absolute;
+	right: 0;
+	color: #fff;
+	font-weight: normal;
+	text-align: center;
+	background: #f80;
+}
+.section-form input,
+.section-form textarea {
+	height: 100%;
+	width: 100%;
+	border: 1px solid #bbb;
+	padding: 5px;
+}
+.section-form label {
+	padding: 5px;
+	white-space: nowrap;
+}
+.section-form input[type="radio"],
+.section-form input[type="checkbox"] {
+	height: 15px;
+	width: 15px;
+}
+.section-form input[type="button"]:disabled {
+	background: #bbb;
+	opacity: .5;
+}
+.section-form input[type="button"] {
+	background: #f00;
+}
+
+.section-form input[type="submit"] {
+	background: #2ea44f;
+}
+
+.section-form select {
+	height: 35px;
+	padding: 5px;
+	border: 1px solid #bbb;
+}
+.section-form textarea {
+	height: 100px;
+}
+.errorArea {
+	overflow: hidden;
+	height: 0;
+	color: red;
+	transition: 0.5s;
+}
+.errorArea.active {
+	height: 30px;
+}
+.btnarea {
+	margin-top: 50px;
+	text-align: center;
+}
+.section-form input[type="button"],
+.section-form input[type="submit"] {
+	width: 300px;
+	height: 50px;
+	color: #fff;
+	font-size: 2.0rem;
+	cursor: pointer;
+}
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: 0.5s;
+}
+.modal.active {
+	z-index: 1000;
+	opacity: 1;
+}
+.modal .item {
+	transition: 0.5s;
+}
+.modal .bg {
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+	opacity: 0;
+}
+.modal .bg.active {
+	opacity: 1;
+}
+.modal .box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	top: -100%;
+	left: 50%;
+	width: 70%;
+	height: 90%;
+	padding: 50px;
+	background: #fff;
+	transform: translateX(-50%);
+	overflow: auto;
+}
+.modal .box.active {
+	z-index: 2;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+.modal .title {
+	font-size: 2.8rem;
+	font-weight: bold;
+}
+.modal .description {
+	font-size: 2.4rem;
+}
+.confirm {
+	margin-bottom: 20px;
+}
+.confirm-item {
+	display: block;
+}
+.confirm-key {
+	font-size: 2.0rem;
+	font-weight: bold;
+}
+
+
+/*****************************
+/ footer
+/*****************************/
+.footer .inner{
+	text-align: center;
+}
+
+
+
+
+@media screen and (max-width:768px){
+	.section-form dl {
+		display: block;
+	}
+
+	.section-form dt {
+		justify-content: start;
+		padding: 0;
+		margin-bottom: 10px;
+	}
+
+	.section-form dl span {
+		min-width: 0;
+	}
+
+	.section-form dd {
+		margin: 0;
+	}
+
+	.required {
+		position: static;
+	}
+
+
+
+}
