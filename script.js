@@ -211,6 +211,15 @@ class EFO{
 		return str.charAt(0).toUpperCase() + str.slice(1);
 	}
 
+	// html escape
+	htmlspecialchars=(str)=>{
+		return (str + '').replace(/&/g,'&amp;')
+						.replace(/"/g,'&quot;')
+						.replace(/'/g,'&#039;')
+						.replace(/</g,'&lt;')
+						.replace(/>/g,'&gt;'); 
+	}
+
 	set={
 		all:function(obj){
 			const fns=Object.keys(this).filter(fn=>fn!=='all');
@@ -305,7 +314,7 @@ class EFO{
 			[...this.$dom.elements].forEach($ele=>{
 				const value = this.management.branchInput($ele);
 				if(!value) return false;
-				this.management.setInfo('confirm',$ele.name,value);
+				this.management.setInfo('confirm',$ele.name,this.htmlspecialchars(value));
 			});
 			// セットした内容を反映
 			this.$dom.inner.innerHTML='';
