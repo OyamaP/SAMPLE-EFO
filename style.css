@@ -117,7 +117,9 @@ a {
 .section-form dl span,
 .form-input {
 	min-height: 35px;
-	min-width: 100px;
+}
+.section-form dl span {
+	word-break: break-word;
 }
 .form-input {
 	display: flex;
@@ -127,6 +129,7 @@ a {
 .section-form dt {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	position: relative;
 	padding-right: 100px;
 	min-width: 300px;
@@ -143,9 +146,11 @@ a {
 	position: absolute;
 	right: 0;
 	color: #fff;
+	min-width: 100px;
 	font-weight: normal;
 	text-align: center;
 	background: #f80;
+	border-radius: 50px;
 }
 .section-form input,
 .section-form textarea {
@@ -184,7 +189,6 @@ a {
 	height: 100px;
 }
 .errorArea {
-	overflow: hidden;
 	height: 0;
 	color: red;
 	transition: 0.5s;
@@ -198,7 +202,7 @@ a {
 }
 .section-form input[type="button"],
 .section-form input[type="submit"] {
-	width: 300px;
+	max-width: 300px;
 	height: 50px;
 	color: #fff;
 	font-size: 2.0rem;
@@ -254,7 +258,7 @@ a {
 	font-weight: bold;
 }
 .modal .description {
-	font-size: 2.4rem;
+	font-size: 1.8rem;
 }
 .confirm {
 	margin-bottom: 20px;
@@ -279,28 +283,32 @@ a {
 
 
 @media screen and (max-width:768px){
+	.common-inner {
+		padding: 20px;
+	}
+	.header .inner {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 	.section-form dl {
 		display: block;
 	}
-
 	.section-form dt {
 		justify-content: start;
 		padding: 0;
 		margin-bottom: 10px;
+		min-width: auto;
 	}
-
-	.section-form dl span {
-		min-width: 0;
-	}
-
 	.section-form dd {
 		margin: 0;
 	}
-
 	.required {
 		position: static;
 	}
-
+	.modal .box {
+		width: 90%;
+		padding: 10px;
+	}
 
 
 }
