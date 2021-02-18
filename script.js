@@ -312,8 +312,9 @@ class EFO{
 			['modal','bg','box'].forEach(name=>this.$dom[name].classList.add('active'),this);
 			// 各値をmanagement.info[name]にセット
 			[...this.$dom.elements].forEach($ele=>{
-				const value = this.management.branchInput($ele);
-				if(!value) return false;
+				let value = this.management.branchInput($ele);
+				if(value===false) return false;
+				if(value==='') value='not input...';
 				this.management.setInfo('confirm',$ele.name,this.htmlspecialchars(value));
 			});
 			// セットした内容を反映
